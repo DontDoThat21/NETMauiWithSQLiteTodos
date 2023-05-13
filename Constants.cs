@@ -15,6 +15,9 @@ namespace NET7MauiWithSqliteTodos
             SQLite.SQLiteOpenFlags.Create |
             SQLite.SQLiteOpenFlags.SharedCache;
 
+        /// <summary>
+        /// Places the SQLite DB into the local app data folder on your machine.
+        /// </summary>
         public static string DatabasePath { get 
             {
                 var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
