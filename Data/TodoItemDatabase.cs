@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TodoApp.Models;
+using NET7MauiWithSqliteTodos.Models;
 
-namespace TodoApp.Data
+namespace NET7MauiWithSqliteTodos.Data
 {
     public class TodoItemDatabase
     {

@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace TodoApp.Models
+namespace NET7MauiWithSqliteTodos.Models
 {
     public class TodoItem
     {
