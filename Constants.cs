@@ -8,6 +8,9 @@ namespace NET7MauiWithSqliteTodos
 {
     public class Constants
     {
+        /// <summary>
+        /// SQLite DB file name.
+        /// </summary>
         public const string DatabaseFilename = "TodoSQLite.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
