@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Todo">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="OnItemAdded" Text="+">
+        <ToolbarItem Clicked="OnItemAdded" Text="Add Task">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
                     <On Platform="Android,UWP" Value="plus.png" />
@@ -14,26 +14,36 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    <ListView
-        x:Name="listView"
-        Margin="20"
-        ItemSelected="OnListItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout
-                        Margin="20,0,0,0"
-                        HorizontalOptions="FillAndExpand"
-                        Orientation="Horizontal">
-                        <Label HorizontalOptions="StartAndExpand" Text="{Binding Name}" />
-                        <Image
-                            HorizontalOptions="End"
-                            IsVisible="{Binding Done}"
-                            Source="check.png" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="20">
+            <Label Text="Tasks" FontSize="32" HorizontalOptions="Center" />
+            <ListView
+                x:Name="listView"
+                Margin="0"
+                ItemSelected="OnListItemSelected"
+                RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="10"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
+                                <Label
+                                    HorizontalOptions="StartAndExpand"
+                                    FontSize="24"
+                                    Text="{Binding Name}" />
+                                <Image
+                                    HorizontalOptions="End"
+                                    IsVisible="{Binding Done}"
+                                    Source="check.png"
+                                    HeightRequest="40"
+                                    WidthRequest="40" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

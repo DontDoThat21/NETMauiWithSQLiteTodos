@@ -66,5 +66,10 @@ namespace NET7MauiWithSqliteTodos.Data
         {
             return Database.DeleteAsync(item);
         }
+
+        public Task<List<TodoItem>> GetItemsWithRemindersAsync()
+        {
+            return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [ReminderTime] <= ?", DateTime.Now);
+        }
     }
 }

@@ -10,7 +10,8 @@ public partial class App : Application
 
 		MainPage = new NavigationPage(new TodoListPage())
 		{
-			BarTextColor = Color.FromRgb(255, 255, 255)
+			BarTextColor = Color.FromRgb(255, 255, 255),
+			BarBackgroundColor = Color.FromRgb(0, 122, 255)
 		};
 	}
 }
